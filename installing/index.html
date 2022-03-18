@@ -1,0 +1,1213 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Your Kubernetes Testing Friend">
+      
+      
+        <meta name="author" content="Kubeshop testkube Team">
+      
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Installation - Testkube</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-204665550-6","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Testkube" class="md-header__button md-logo" aria-label="Testkube" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Testkube
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kubeshop/testkube/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kubeshop/testkube
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Testkube" class="md-nav__button md-logo" aria-label="Testkube" data-md-component="logo">
+      
+  <img src="../img/logo.png" alt="logo">
+
+    </a>
+    Testkube
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kubeshop/testkube/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kubeshop/testkube
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Installation
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-kubectl-testkube-plugin" class="md-nav__link">
+    Install the Kubectl Testkube Plugin
+  </a>
+  
+    <nav class="md-nav" aria-label="Install the Kubectl Testkube Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-on-macos" class="md-nav__link">
+    Installing on MacOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-on-linux-or-macos-with-install-script" class="md-nav__link">
+    Installing on Linux or MacOS with Install Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-installation-method-manual" class="md-nav__link">
+    Alternative Installation Method - Manual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-testkube-components-in-your-cluster" class="md-nav__link">
+    Install Testkube Components in Your Cluster
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Testkube Components in Your Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-testkube-helm-charts-installation" class="md-nav__link">
+    Manual Testkube Helm Charts Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helm-properties" class="md-nav__link">
+    Helm Properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstall-testkube" class="md-nav__link">
+    Uninstall Testkube
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Managing Test Suites
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Managing Test Suites" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Managing Test Suites
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testsuites-creating/" class="md-nav__link">
+        Creating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testsuites-running/" class="md-nav__link">
+        Running
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testsuites-getting-results/" class="md-nav__link">
+        Getting results
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Managing Tests
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Managing Tests" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Managing Tests
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests-creating/" class="md-nav__link">
+        Creating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests-running/" class="md-nav__link">
+        Running
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tests-getting-results/" class="md-nav__link">
+        Getting Results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executor-postman/" class="md-nav__link">
+        Postman Collections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executor-cypress/" class="md-nav__link">
+        Cypress Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executor-curl/" class="md-nav__link">
+        Curl Commands
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Executors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Executors" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Executors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executor-custom/" class="md-nav__link">
+        Creating custom executor
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          CLI Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CLI Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          CLI Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/testkube/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/testkube_install/" class="md-nav__link">
+        Install Command
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/testkube_testsuites/" class="md-nav__link">
+        TestSuites Command
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/testkube_tests/" class="md-nav__link">
+        Tests Command
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/testkube_dashboard/" class="md-nav__link">
+        Dashboard Command
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testkube-automation/" class="md-nav__link">
+        Integrating with CI/CD
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics/" class="md-nav__link">
+        Metrics
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        Development
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openapi/" class="md-nav__link">
+        OpenAPI Definition
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../telemetry/" class="md-nav__link">
+        Telemetry
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../artifacts-storage/" class="md-nav__link">
+        Storage
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-kubectl-testkube-plugin" class="md-nav__link">
+    Install the Kubectl Testkube Plugin
+  </a>
+  
+    <nav class="md-nav" aria-label="Install the Kubectl Testkube Plugin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-on-macos" class="md-nav__link">
+    Installing on MacOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-on-linux-or-macos-with-install-script" class="md-nav__link">
+    Installing on Linux or MacOS with Install Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-installation-method-manual" class="md-nav__link">
+    Alternative Installation Method - Manual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-testkube-components-in-your-cluster" class="md-nav__link">
+    Install Testkube Components in Your Cluster
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Testkube Components in Your Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-testkube-helm-charts-installation" class="md-nav__link">
+    Manual Testkube Helm Charts Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helm-properties" class="md-nav__link">
+    Helm Properties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstall-testkube" class="md-nav__link">
+    Uninstall Testkube
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/kubeshop/testkube/blob/main/docs/installing.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="installation">Installation</h1>
+<p>To get Testkube up and running:</p>
+<ol>
+<li>Install the kubectl testkube plugin.</li>
+<li>Install Testkube in your cluster.</li>
+<li>Configure Testkube's Dashboard UI Ingress for your ingress-controller, if needed.</li>
+</ol>
+<h2 id="install-the-kubectl-testkube-plugin"><strong>Install the Kubectl Testkube Plugin</strong></h2>
+<h3 id="installing-on-macos"><strong>Installing on MacOS</strong></h3>
+<p>We're building a Homebrew tap for each release, so you can easily install Testkube with Homebrew.</p>
+<div class="highlight"><pre><span></span><code>brew tap kubeshop/homebrew-testkube
+brew install kubeshop/testkube/testkube
+</code></pre></div>
+<p>If you want to upgrade testkube, please run following command</p>
+<div class="highlight"><pre><span></span><code>brew update 
+brew upgrade testkube
+</code></pre></div>
+<h3 id="installing-on-linux-or-macos-with-install-script"><strong>Installing on Linux or MacOS with Install Script</strong></h3>
+<p>To install on Linux or MacOs, run</p>
+<div class="highlight"><pre><span></span><code>bash &lt; &lt;<span class="o">(</span>curl -sSLf https://kubeshop.github.io/testkube/install.sh <span class="o">)</span>
+</code></pre></div>
+<h3 id="alternative-installation-method-manual"><strong>Alternative Installation Method - Manual</strong></h3>
+<p>If you don't like automatic scripts you can always do a manual install:</p>
+<ol>
+<li>Download binary with the version of your choice (the most recent one is recommended).</li>
+<li>Upack it (tar -zxvf testkube_0.6.5_Linux_arm64.tar.gz).</li>
+<li>Move it to a location in the PATH. For example, <code>mv  testkube_0.6.5_Linux_arm64/kubectl-testkube /usr/local/bin/kubectl-testkube</code>.</li>
+</ol>
+<p>For Windows, download the binary <a href="https://github.com/kubeshop/testkube/releases">here</a>, unpack the binary and add it to <code>%PATH%</code>.</p>
+<p>We have plans to build installers for the most popular Operating Systems and system distros <a href="https://github.com/kubeshop/testkube/issues/161">#161</a>.</p>
+<h2 id="install-testkube-components-in-your-cluster"><strong>Install Testkube Components in Your Cluster</strong></h2>
+<p>The Testkube kubectl plugin provides an install command to install Testkube in your cluster.</p>
+<p>Run:</p>
+<div class="highlight"><pre><span></span><code>kubectl testkube install
+</code></pre></div>
+<p>The above command will install the following components in your Kubernetes cluster:</p>
+<ol>
+<li>Testkube API</li>
+<li><code>testkube</code> namespace</li>
+<li>CRD for Tests, TestSuites, Executors</li>
+<li>MongoDB</li>
+<li>Minio - default (can be disabled with <code>--no-minio</code> flag if you want to use S3 buckets)</li>
+<li>Dashboard - default (can be disabled with <code>--no-dasboard</code> flag)</li>
+<li>Jetstack certificate manager for <code>testkube</code> namespace (can be disabled with <code>--no-jetstack</code> flag). It will not be installed, if it's already installed to your Kubernetes cluster</li>
+</ol>
+<p>Confirm that Testkube is running:</p>
+<div class="highlight"><pre><span></span><code>kubectl get all -n testkube
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code>NAME                                           READY   STATUS    RESTARTS   AGE
+pod/cert-manager-847544bbd-fw2h8               <span class="m">1</span>/1     Running   <span class="m">0</span>          4m51s
+pod/cert-manager-cainjector-5c747645bf-qgftx   <span class="m">1</span>/1     Running   <span class="m">0</span>          4m51s
+pod/cert-manager-webhook-77b946cb6d-dl6gb      <span class="m">1</span>/1     Running   <span class="m">0</span>          4m51s
+pod/testkube-dashboard-748cbcbb66-q8zzp        <span class="m">1</span>/1     Running   <span class="m">0</span>          4m51s
+pod/testkube-api-server-546777c9f7-7g4kg       <span class="m">1</span>/1     Running   <span class="m">0</span>          4m51s
+pod/testkube-mongodb-5d95f44fdd-cxqz6          <span class="m">1</span>/1     Running   <span class="m">0</span>          4m51s
+pod/testkube-minio-testkube-64cd475b94-562hz   <span class="m">1</span>/1     Running   <span class="m">0</span>          4m51s
+
+NAME                                      TYPE        CLUSTER-IP      EXTERNAL-IP   PORT<span class="o">(</span>S<span class="o">)</span>                                        AGE
+service/cert-manager                      ClusterIP   <span class="m">10</span>.106.81.214   &lt;none&gt;        <span class="m">9402</span>/TCP                                       2d20h
+service/cert-manager-webhook              ClusterIP   <span class="m">10</span>.104.228.254  &lt;none&gt;        <span class="m">443</span>/TCP                                        2d20h
+service/testkube-minio-service-testkube   NodePort    <span class="m">10</span>.43.121.107   &lt;none&gt;        <span class="m">9000</span>:31222/TCP,9090:32002/TCP,9443:32586/TCP   4m51s
+service/testkube-api-server               NodePort    <span class="m">10</span>.43.66.13     &lt;none&gt;        <span class="m">8088</span>:32203/TCP                                 4m51s
+service/testkube-mongodb                  ClusterIP   <span class="m">10</span>.43.126.230   &lt;none&gt;        <span class="m">27017</span>/TCP                                      4m51s
+service/testkube-dashboard                NodePort    <span class="m">10</span>.43.136.34    &lt;none&gt;        <span class="m">80</span>:31991/TCP                                   4m51s
+
+NAME                                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/cert-manager              <span class="m">1</span>/1     <span class="m">1</span>            <span class="m">1</span>           4m51s
+deployment.apps/cert-manager-cainjector   <span class="m">1</span>/1     <span class="m">1</span>            <span class="m">1</span>           4m51s
+deployment.apps/cert-manager-webhook      <span class="m">1</span>/1     <span class="m">1</span>            <span class="m">1</span>           4m51s
+deployment.apps/testkube-dashboard        <span class="m">1</span>/1     <span class="m">1</span>            <span class="m">1</span>           4m51s
+deployment.apps/testkube-api-server       <span class="m">1</span>/1     <span class="m">1</span>            <span class="m">1</span>           4m51s
+deployment.apps/testkube-mongodb          <span class="m">1</span>/1     <span class="m">1</span>            <span class="m">1</span>           4m51s
+deployment.apps/testkube-minio-testkube   <span class="m">1</span>/1     <span class="m">1</span>            <span class="m">1</span>           4m51s
+
+NAME                                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/cert-manager-847544bbd               <span class="m">1</span>         <span class="m">1</span>         <span class="m">1</span>       4m51s
+replicaset.apps/cert-manager-cainjector-5c747645bf   <span class="m">1</span>         <span class="m">1</span>         <span class="m">1</span>       4m51s
+replicaset.apps/cert-manager-webhook-77b946cb6d      <span class="m">1</span>         <span class="m">1</span>         <span class="m">1</span>       4m51s
+replicaset.apps/testkube-dashboard-748cbcbb66        <span class="m">1</span>         <span class="m">1</span>         <span class="m">1</span>       4m51s
+replicaset.apps/testkube-api-server-546777c9f7       <span class="m">1</span>         <span class="m">1</span>         <span class="m">1</span>       4m51s
+replicaset.apps/testkube-mongodb-5d95f44fdd          <span class="m">1</span>         <span class="m">1</span>         <span class="m">1</span>       4m51s
+replicaset.apps/testkube-minio-testkube-64cd475b94   <span class="m">1</span>         <span class="m">1</span>         <span class="m">1</span>       4m51s
+</code></pre></div>
+<p>By default Testkube is installed in the <code>testkube</code> namespace.</p>
+<h3 id="manual-testkube-helm-charts-installation"><strong>Manual Testkube Helm Charts Installation</strong></h3>
+<p><a href="https://helm.sh">Helm</a> must be installed to use charts.<br />
+Please refer to  Helm's <a href="https://helm.sh/docs">documentation</a> to get started.</p>
+<p>Once Helm has been set up correctly, add the Kubeshop Helm repository as follows:</p>
+<div class="highlight"><pre><span></span><code>helm repo add testkube https://kubeshop.github.io/helm-charts
+</code></pre></div>
+<p>If this repo already exists, run <code>helm repo update</code> to retrieve
+the <code>latest</code> versions of the packages.  You can then run <code>helm search repo
+testkube</code> to see the charts.</p>
+<p>To install the <code>testkube</code> chart:</p>
+<div class="highlight"><pre><span></span><code>helm install --create-namespace my-testkube testkube/testkube
+</code></pre></div>
+<p>Please note that, by default, the namespace for the intstallation will be <code>testkube</code>. If the <code>testkube</code> namespace does not exist, it will be created for you.</p>
+<p>If you wish to install into a different namespace, please use following command:</p>
+<div class="highlight"><pre><span></span><code>helm install --namespace namespace_name my-testkube testkube/testkube
+</code></pre></div>
+<p>To uninstall the <code>testkube</code> chart if it was installed into default namespace:</p>
+<div class="highlight"><pre><span></span><code>helm delete my-testkube testkube/testkube
+</code></pre></div>
+<p>And from a namespace other than <code>testkube</code>:</p>
+<div class="highlight"><pre><span></span><code>helm delete --namespace namespace_name my-testkube testkube/testkube
+</code></pre></div>
+<h3 id="helm-properties"><strong>Helm Properties</strong></h3>
+<p>The following Helm defaults are used in the <code>testkube</code> chart:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Is optional</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mongodb.auth.enabled</td>
+<td>yes</td>
+<td>false</td>
+</tr>
+<tr>
+<td>mongodb.service.port</td>
+<td>yes</td>
+<td>"27017"</td>
+</tr>
+<tr>
+<td>mongodb.service.portNmae</td>
+<td>yes</td>
+<td>"mongodb"</td>
+</tr>
+<tr>
+<td>mongodb.service.nodePort</td>
+<td>yes</td>
+<td>true</td>
+</tr>
+<tr>
+<td>mongodb.service.clusterIP</td>
+<td>yes</td>
+<td>""</td>
+</tr>
+<tr>
+<td>mongodb.nameOverride</td>
+<td>yes</td>
+<td>"mongodb"</td>
+</tr>
+<tr>
+<td>mongodb.fullnameOverride</td>
+<td>yes</td>
+<td>"testkube-mongodb"</td>
+</tr>
+<tr>
+<td>api-server.image.repository</td>
+<td>yes</td>
+<td>"kubeshop/testkube-api-server"</td>
+</tr>
+<tr>
+<td>api-server.image.pullPolicy</td>
+<td>yes</td>
+<td>"Always"</td>
+</tr>
+<tr>
+<td>api-server.image.tag</td>
+<td>yes</td>
+<td>"latest"</td>
+</tr>
+<tr>
+<td>api-server.service.type</td>
+<td>yes</td>
+<td>"NodePort"</td>
+</tr>
+<tr>
+<td>api-server.service.port</td>
+<td>yes</td>
+<td>8088</td>
+</tr>
+<tr>
+<td>api-server.mongoDSN</td>
+<td>yes</td>
+<td>"mongodb://testkube-mongodb:27017"</td>
+</tr>
+<tr>
+<td>api-server.analyticsEnabled</td>
+<td>yes</td>
+<td>true</td>
+</tr>
+<tr>
+<td>api-server.storage.endpoint</td>
+<td>yes</td>
+<td>testkube-minio-service-testkube:9000</td>
+</tr>
+<tr>
+<td>api-server.storage.accessKeyId</td>
+<td>yes</td>
+<td>minio</td>
+</tr>
+<tr>
+<td>api-server.storage.accessKey</td>
+<td>yes</td>
+<td>minio123</td>
+</tr>
+<tr>
+<td>api-server.storage.scrapperEnabled</td>
+<td>yes</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>For more configuration parameters of <code>MongoDB</code> chart please visit:
+<a href="https://github.com/bitnami/charts/tree/master/bitnami/mongodb#parameters">https://github.com/bitnami/charts/tree/master/bitnami/mongodb#parameters</a></p>
+</blockquote>
+<h2 id="uninstall-testkube"><strong>Uninstall Testkube</strong></h2>
+<p>Uninstall Testkube using the uninstall command integrated into the Testkube plugin.</p>
+<div class="highlight"><pre><span></span><code>kubectl testkube uninstall <span class="o">[</span>--remove-crds<span class="o">]</span>
+</code></pre></div>
+<p>Optionally, you can use the <code>--remove-crds</code> flag which will clean all installed Custom Resource Definitions installed by Testkube.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Welcome
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../getting-started/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting Started" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Getting Started
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 <a href="https://kubeshop.io">Kubeshop</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>
